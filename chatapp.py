@@ -25,7 +25,7 @@ def get_pdf_text(pdf_docs):
 
 
 def get_text_chunks(text):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=50000, chunk_overlap=1000)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     chunks = text_splitter.split_text(text)
     return chunks
 
@@ -47,7 +47,8 @@ def get_conversational_chain():
     Answer:
     """
 
-    model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
+    # model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
+    model = ChatGoogleGenerativeAI(model="gemini-1.5-pro-002", temperature=0.3)  # Use gemini-1.5-pro for better performance
 
     prompt = PromptTemplate(template = prompt_template, input_variables = ["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
@@ -59,7 +60,9 @@ def get_conversational_chain():
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     
-    new_db = FAISS.load_local("faiss_index", embeddings)
+    # new_db = FAISS.load_local("faiss_index", embeddings)s
+    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True) # dodałem allow_dangerous_deserialization=True, aby uniknąć błędu deserializacji
+
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()
