@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 # moja poprawka
 *.env
+*faiss_index
