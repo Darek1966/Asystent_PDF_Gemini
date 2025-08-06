@@ -398,5 +398,6 @@ FodyWeavers.xsd
 *.sln.iml
 
 # moja poprawka
+.env
 *.env
-*faiss_index
+faiss_index/
