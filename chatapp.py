@@ -9,6 +9,22 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
+# Dodałem usuwanie foldera faiss_index, jeśli istnieje
+import atexit
+import shutil
+
+INDEX_FOLDER = "faiss_index"
+
+def clean_faiss_index():
+    if os.path.exists(INDEX_FOLDER):
+        try:
+            shutil.rmtree(INDEX_FOLDER)
+            print(f"Folder {INDEX_FOLDER} został usunięty po zakończeniu programu.")
+        except Exception as e:
+            print(f"Nie udało się usunąć folderu {INDEX_FOLDER}: {e}")
+
+atexit.register(clean_faiss_index)
+# 
 
 load_dotenv()
 # os.getenv("GOOGLE_API_KEY")
