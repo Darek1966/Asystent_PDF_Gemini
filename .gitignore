@@ -403,3 +403,6 @@ FodyWeavers.xsd
 faiss_index/
 # Windows system files
 desktop.ini
+analiza_projektu.md
+test_api.py
+.zencoder/
