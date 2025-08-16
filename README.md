@@ -75,10 +75,6 @@ Aby korzystać z Asystenta PDF, wykonaj następujące kroki:
 
 Aplikacja wykorzysta sztuczną inteligencję konwersacyjną, aby udzielić odpowiedzi na podstawie zawartości wgranych dokumentów. Odpowiedzi będą wyświetlane w interfejsie czatu.
 
-## ©️ Licencja 🪪
-
-Rozpowszechniane na licencji MIT. Zobacz `LICENSE`, aby uzyskać więcej informacji.
-
 ---
 
 ## Kontakt
@@ -87,5 +83,9 @@ Rozpowszechniane na licencji MIT. Zobacz `LICENSE`, aby uzyskać więcej informa
 
 [![GitHub](https://img.shields.io/badge/GitHub-Darek1966-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Darek1966)
 
+## Licencja
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Ten projekt jest licencjonowany na licencji MIT - zobacz plik [LICENSE](LICENSE).
 
 ---
